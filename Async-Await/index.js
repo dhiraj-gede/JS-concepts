@@ -17,6 +17,7 @@ function populateUL(user){
     const loginName_P= document.createElement('p');
     const loginName_P_Span= document.createElement('span');
     const loginName_P_Span_a= document.createElement('a');
+    const a_repBtn= document.createElement('a');
     const repBtn= document.createElement('button');
     const details= document.createElement('div');
     const detailsRow= document.createElement('div');
@@ -44,6 +45,7 @@ function populateUL(user){
     loginName_P_Span_a.setAttribute('href',user.html_url);
     loginName_P_Span_a.setAttribute('target','_blank');
     repBtn.setAttribute('type','btn');
+    a_repBtn.setAttribute('href',`https://github.com/${user.login}?tab=repositories`);
     repBtn.setAttribute('class','btn btn-success mt-3 btn-rounded waves-effect w-md waves-light');
     details.setAttribute('class', 'mt-4');
     detailsRow.setAttribute('class', 'row');
@@ -76,7 +78,8 @@ function populateUL(user){
     loginName.appendChild(loginName_P);
     loginName_P.appendChild(loginName_P_Span);
     loginName_P.appendChild(loginName_P_Span_a);
-    memberCard.appendChild(repBtn);
+    memberCard.appendChild(a_repBtn);
+    a_repBtn.appendChild(repBtn);
     memberCard.appendChild(details);
     details.appendChild(detailsRow);
     detailsRow.appendChild(detailscol);
